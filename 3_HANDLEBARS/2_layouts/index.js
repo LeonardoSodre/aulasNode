@@ -8,7 +8,7 @@ app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 app.get('/',(req,res) =>{ //rota padrão para o usuario que acessar a pagina
-    res.render('home', {layout: false}) 
+    res.render('home') 
 })
 
 app.listen(3030, () => {
