@@ -7,8 +7,25 @@ const app = express()
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
+//rotas
+
+app.get('/post', (req, res) =>{
+
+    const post = {
+        title:"Aprendendo Node JS",
+        category: "JavaScript",
+        body: "Este artigo vai te ajudar a aprender Node.JS",
+        comments: 7
+    }
+
+    res.render('post', {post})
+})
+
+
 app.get('/dashboard', (req, res) =>{
-res.render('dashboard')
+    const items = ['Item a', 'Item b', 'Item c ']
+
+res.render('dashboard', {items})
 })
 
 app.get('/',(req,res) =>{ 
